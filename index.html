@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트 페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="App" class="container">
+        <header class="container-md p-0">
+            <div class="row text-center">
+                <h2 id="titleLogo" class="col-md-8 bg-info text-light"></h2>
+                <ul id="gnbTopLineMenu" class="text-center bg-dark col-md-4 navbar-nav flex-lg-row justify-content-around">
+                    
+                </ul>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <ul id="gnbTopMenu" class="w-100 navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll flex-lg-row justify-content-lg-around">
+
+                </ul>
+            </div>
+        </nav>
+        <section class="container-md row">
+            <h6 class="hidden">section1</h6>
+            <article class="col-8 text-bg-dark shadow-lg p-4 m-3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse provident veniam blanditiis neque sed tenetur exercitationem quasi excepturi quas sint maiores doloremque at deleniti expedita architecto alias aut, mollitia ipsum!
+            </article>
+            <aside class="col-3 text-center p-4 m-3 bg-warning text-light">
+                광고
+            </aside>
+        </section>
+        <div class="container-fluid bg-primary p-2">
+            <ul id="UnderMenu" class="w-100 navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll flex-lg-row justify-content-lg-around">
+
+            </ul>
+        </div>
+        <footer class="bg-info text-light p-2">
+            하단
+        </footer>
+    </div>
+    <script>
+        document.getElementById('titleLogo').innerText = `테스트 페이지 입니다.`
+        const gnbTopLineMenu = [];
+        const gnbTopLineMenu_List = ['sub1','sub2','sub3','sub4'];
+        for (let i = 0; i < gnbTopLineMenu_List.length; i++) {
+            const element = gnbTopLineMenu_List[i];
+            gnbTopLineMenu.push(`<li class="nav-item gnbTopLineMenu-item"><a href=${element} target="_blank">${element}</a></li>`);
+        }
+        document.getElementById('gnbTopLineMenu').innerHTML = `${gnbTopLineMenu}`;
+
+
+        const gnbTopMenu = [];
+        const gnbTopMenu_List = ['menu1' ,'menu2' ,'menu3', 'menu4', 'menu5'];
+        for (let i = 0; i < gnbTopMenu_List.length; i++) {
+            const element = gnbTopMenu_List[i];
+            gnbTopMenu.push(`<li class="nav-item gnbTopMenu-item"><a href=${element} target="_blank">${element}</a></li>`);
+        };
+        document.getElementById('gnbTopMenu').innerHTML =  `${gnbTopMenu}`;
+
+        const UnderMenu = [];
+        const UnderMenu_List = ['under1','under2','under3','under4','under5'];
+        for (let i = 0; i < UnderMenu_List.length; i++) {
+            const element = UnderMenu_List[i];
+        UnderMenu.push(`<li class="nav-item UnderMenu-item"><a href=${element} target="_blank">${element}</a></li>`);            
+        }
+        document.getElementById('UnderMenu').innerHTML = `${UnderMenu}`;
+    
+
+        const pls = [1,34,4,5,6]
+        function rnd(props, callback) {
+            let list = [];
+            for (let i = 0; i < pls.length; i++) {
+                const element = pls[i];
+                if (element > callback) {
+                    list.push(element);
+                }
+            }
+            return list;
+        }
+        
+        console.log(rnd(pls, (function(){return 4}())));
+
+
+        
+        console.log()
+
+
+    </script>
+</body>
+</html>
